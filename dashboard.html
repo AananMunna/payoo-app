@@ -16,12 +16,12 @@
                 <div class="flex gap-1 justify-center items-center">
                     <div class="logo"><img src="./assets/Group.png" alt="logo" class="w-10"></div>
                     <div>
-                        <h2 class="amount font-bold text-xl">$ <span>45000</span></h2>
+                        <h2 class="amount font-bold text-xl">$ <span id="mainBalance">45000</span></h2>
                         <p class="text-xs">Available Balance</p>
                     </div>
                 </div>
                 <div>
-                    <button class="btn flex justify-center items-center">
+                    <button id="logOut" class="btn flex justify-center items-center">
                         <img src="./assets/Frame (5).png" alt="">
                         Log Out
                       </button>
@@ -34,7 +34,7 @@
             <p class="mt-1 mb-5 text-[#8c8a8a]">Enjoy easy and convenient financial services with us. Cashout charge is low and</p>
     
             <div class="grid grid-cols-3 gap-3">
-                <div class="border rounded-2xl p-3 text-center space-y-2">
+                <div id="addMoney" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
                     <img src="./assets/wallet1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Add Money</p>
                 </div>
@@ -63,7 +63,7 @@
     </div>
 
     <!-- latest payment -->
-     <section class="p-3 space-y-3">
+     <section id="latestPaymentSection" class=" p-3 space-y-3">
         <div class="flex justify-between items-center pt-3">
             <h2 class="text-xl font-bold">Latest Payment</h2>
             <span class="text-sm text-[#8a8787]">View All</span>
@@ -117,5 +117,46 @@
             </div>
         </div>
      </section>
+
+     <!-- add money -->
+      <section id="addMoneySection" class="hidden">
+        <h2 class="text-xl font-bold m-5">Add Money</h2>
+        <div class="card bg-base-100 shrink-0 shadow-2xl m-5">
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Select A Bank</span>
+                </label>
+                <select class="select select-bordered w-full max-w-xs rounded-full" required>
+                    <option disabled selected>Select bank</option>
+                    <option>DBL- Dutch Bangla Bank</option>
+                    <option>Sonali Bank</option>
+                    <option>Krishi Bank</option>
+                  </select>
+                <label class="label">
+                  <span class="label-text">Bank account Number</span>
+                </label>
+                <input id="mobileNumber" value="01310468353" type="number" placeholder="Enter 11 digit account number" class="input input-bordered rounded-full" required />
+                <label class="label">
+                  <span class="label-text">Amount to Add</span>
+                </label>
+                <input id="amountToAdd" value="3" type="number" placeholder="Add amount to withdraw" class="input input-bordered rounded-full" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Pin Number</span>
+                </label>
+                <input id="pin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
+                
+              </div>
+              <div class="form-control mt-6">
+                <button id="addMoneyBtn" class="btn btn-primary rounded-full">Add Money</button>
+              </div>
+            </form>
+          </div>
+      </section>
+
+
+     <script src="./script/dashboard.js"></script>
 </body>
 </html>
