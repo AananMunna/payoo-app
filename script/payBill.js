@@ -1,27 +1,27 @@
-document.getElementById('cashOut').addEventListener('click', ()=>{
+document.getElementById('payBill').addEventListener('click', ()=>{
     document.getElementById('addMoney').style.background = 'white'
-    document.getElementById('cashOut').style.background = '#ddd'
+    document.getElementById('cashOut').style.background = 'white'
     document.getElementById('transferMoney').style.background = 'white'
     document.getElementById('getBonus').style.background = 'white'
-    document.getElementById('payBill').style.background = 'white'
+    document.getElementById('payBill').style.background = '#ddd'
     document.getElementById('transactions').style.background = 'white'
 
     document.getElementById('addMoneySection').style.display = 'none'
-    document.getElementById('cashOutSection').style.display = 'block'
+    document.getElementById('cashOutSection').style.display = 'none'
     document.getElementById('transferMoneySection').style.display = 'none'
     document.getElementById('getBonusSection').style.display = 'none'
-    document.getElementById('payBillSection').style.display = 'none'
+    document.getElementById('payBillSection').style.display = 'block'
     document.getElementById('latestPaymentSection').style.display = 'none'
 
 })
 
-document.getElementById('widtdrawBtn').addEventListener('click', (e)=>{
+document.getElementById('payNowButton').addEventListener('click', (e)=>{
     e.preventDefault();
 
-    const amountTowithdraw = document.getElementById('amountTowithdraw');
-    let amountToAddValue = parseInt(amountTowithdraw.value);
+    const amountToPayInput = document.getElementById('amountToPayInput');
+    let amountToAddValue = parseInt(amountToPayInput.value);
 
-    if(amountTowithdraw.value !=='' && amountTowithdraw.value >0){
+    if(amountToPayInput.value !=='' && amountToPayInput.value >0){
 
     const mainBalance = document.getElementById('mainBalance');
     let mainBalanceValue = parseInt(mainBalance.innerText)
@@ -30,7 +30,7 @@ document.getElementById('widtdrawBtn').addEventListener('click', (e)=>{
     document.getElementById('mainBalance').innerText = total;
 
     alert(`
-        CashOut: ${amountToAddValue} TAKA from your Main Balance. Total : ${mainBalanceValue} - ${amountToAddValue} = ${total} Taka
+        Pay Bill: ${amountToAddValue} TAKA from your Main Balance. Total : ${mainBalanceValue} - ${amountToAddValue} = ${total} Taka
         `)
 
     }else{

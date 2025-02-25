@@ -42,19 +42,19 @@
                     <img src="./assets/send1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Cashout</p>
                 </div>
-                <div class="border rounded-2xl p-3 text-center space-y-2">
+                <div id="transferMoney" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
                     <img src="./assets/money1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Transfer Money</p>
                 </div>
-                <div class="border rounded-2xl p-3 text-center space-y-2">
+                <div id="getBonus" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
                     <img src="./assets/bonus1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Get Bonus</p>
                 </div>
-                <div class="border rounded-2xl p-3 text-center space-y-2">
+                <div id="payBill" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
                     <img src="./assets/purse1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Pay Bill</p>
                 </div>
-                <div class="border rounded-2xl p-3 text-center space-y-2">
+                <div id="transactions" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
                     <img src="./assets/transaction1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Transactions</p>
                 </div>
@@ -159,7 +159,7 @@
       </section>
 
      <!-- Cash out -->
-      <section id="cashOutSection" class="">
+      <section id="cashOutSection" class="hidden">
         <h2 class="text-xl font-bold m-5">Cash Out</h2>
         <div class="card bg-base-100 shrink-0 shadow-2xl m-5">
             <form class="card-body">
@@ -187,8 +187,100 @@
           </div>
       </section>
 
+     <!-- Transfer Money -->
+      <section id="transferMoneySection" class="hidden">
+        <h2 class="text-xl font-bold m-5">Transfer Money</h2>
+        <div class="card bg-base-100 shrink-0 shadow-2xl m-5">
+            <form class="card-body">
+              <div class="form-control">                
+                <label class="label">
+                  <span class="label-text">User Account Number</span>
+                </label>
+                <input id="bankAccountNumber" value="01310468353" type="number" placeholder="Enter 11 digit number" class="input input-bordered rounded-full" required />
+                <label class="label">
+                  <span class="label-text">Amount</span>
+                </label>
+                <input id="amountToTransfer" type="number" placeholder="Enter amount to transfer" class="input input-bordered rounded-full" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Pin Number</span>
+                </label>
+                <input id="pin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
+                
+              </div>
+              <div class="form-control mt-6">
+                <button id="transferMoneyBtn" type="submit" class="btn btn-primary rounded-full">Send Now</button>
+              </div>
+            </form>
+          </div>
+      </section>
+
+      
+     <!-- Get Bonus section -->
+     <section id="getBonusSection" class="hidden">
+        <h2 class="text-xl font-bold m-5">Get Bonus</h2>
+        <div class="card bg-base-100 shrink-0 shadow-2xl m-5">
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Enter Bonus Coupon</span>
+                </label>
+                <input id="getBonusInp" value="payoo" type="text" placeholder="Enter your coupon" class="input input-bordered rounded-full" required />                
+              </div>
+              <div class="form-control mt-6">
+                <button id="getBonusBtn" type="submit" class="btn btn-primary rounded-full">Get Bonus</button>
+              </div>
+            </form>
+          </div>
+      </section>
+      
+     <!-- Pay Bill -->
+     <section id="payBillSection" class="hidden">
+        <h2 class="text-xl font-bold m-5">Pay Bill</h2>
+        <div class="card bg-base-100 shrink-0 shadow-2xl m-5">
+            <form class="card-body">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Select To Pay</span>
+                    </label>
+                    <select class="select select-bordered w-full max-w-xs rounded-full" required>
+                        <option disabled selected>Select</option>
+                        <option>PalliBiddut</option>
+                        <option>Carnival</option>
+                        <option>LPG Gas</option>
+                      </select>
+                </div>
+              <div class="form-control">                
+                <label class="label">
+                  <span class="label-text">Biller account Number</span>
+                </label>
+                <input id="bankAccountNumber" value="01310468353" type="number" placeholder="Enter account number" class="input input-bordered rounded-full" required />
+                <label class="label">
+                  <span class="label-text">Amount to Pay</span>
+                </label>
+                <input id="amountToPayInput" type="number" placeholder="Add amount to Pay" class="input input-bordered rounded-full" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Pin Number</span>
+                </label>
+                <input id="pin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
+                
+              </div>
+              <div class="form-control mt-6">
+                <button id="payNowButton" type="submit" class="btn btn-primary rounded-full">Pay Now</button>
+              </div>
+            </form>
+          </div>
+      </section>
+
 
      <script src="./script/dashboard.js"></script>
      <script src="./script/cashOut.js"></script>
+     <script src="./script/transferMoney.js"></script>
+     <script src="./script/getBonus.js"></script>
+     <script src="./script/payBill.js"></script>
+     <script src="./script/transactions.js"></script>
 </body>
 </html>
