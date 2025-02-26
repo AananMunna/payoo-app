@@ -48,6 +48,8 @@ document.getElementById('withDrawButton').addEventListener('click', (e)=>{
                 `
                 my_modal_1.showModal()
 
+                transaction('Cash Out','../assets/send1.png')
+
             }else{
                 document.getElementById('cashOutPinSpan').style.color = 'red'
                 document.getElementById('cashOutPin').style.color = 'red'

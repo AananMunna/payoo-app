@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="container mx-auto">
     <div class=" rounded-b-2xl shadow pb-5">
         <header class="p-3 border-b fixed top-0 left-0 right-0 bg-white z-10">
             <nav class="flex justify-between items-center">
@@ -34,27 +34,27 @@
             <p class="mt-1 mb-5 text-[#8c8a8a]">Enjoy easy and convenient financial services with us. Cashout charge is low and</p>
     
             <div class="grid grid-cols-3 gap-3">
-                <div id="addMoney" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
+                <div id="addMoney" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer transition hover:shadow-2xl">
                     <img src="./assets/wallet1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Add Money</p>
                 </div>
-                <div id="cashOut" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
+                <div id="cashOut" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer transition hover:shadow-2xl">
                     <img src="./assets/send1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Cashout</p>
                 </div>
-                <div id="transferMoney" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
+                <div id="transferMoney" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer transition hover:shadow-2xl">
                     <img src="./assets/money1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Transfer Money</p>
                 </div>
-                <div id="getBonus" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
+                <div id="getBonus" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer transition hover:shadow-2xl">
                     <img src="./assets/bonus1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Get Bonus</p>
                 </div>
-                <div id="payBill" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer">
+                <div id="payBill" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer transition hover:shadow-2xl">
                     <img src="./assets/purse1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Pay Bill</p>
                 </div>
-                <div id="transactions" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer bg-[#ddd]">
+                <div id="transactions" class="border rounded-2xl p-3 text-center space-y-2 cursor-pointer bg-[#ddd] transition hover:shadow-2xl">
                     <img src="./assets/transaction1.png" class=" mx-auto" alt="">
                     <p class="text-sm">Transactions</p>
                 </div>
@@ -63,58 +63,24 @@
     </div>
 
     <!-- latest payment -->
-     <section id="latestPaymentSection" class=" p-3 space-y-3">
+     <section id="latestPaymentSection" class=" p-3">
         <div class="flex justify-between items-center pt-3">
             <h2 class="text-xl font-bold">Latest Payment</h2>
             <span class="text-sm text-[#8a8787]">View All</span>
         </div>
-        <div class="flex justify-between items-center shadow rounded-2xl border p-3">
+        <div id="transactionsList" class=" space-y-3 pt-3">
+          <!-- <div class="flex justify-between items-center shadow rounded-2xl border p-3 transition hover:scale-105 hover:shadow-2xl">
             <div class="flex justify-start items-center gap-4">
                 <img src="./assets/wallet1.png" class="border p-3 rounded-full bg-[#ddd]" alt="">
             <div>
-                <h3 class="font-bold">Electricity Bill</h3>
+                <h3 class="font-bold">Add Money</h3>
                 <span class="text-sm text-[#7b7878]">Today 01:44 AM</span>
             </div>
             </div>
-            <div>
-                <img src="./assets/dot.png" alt="">
+            <div id="openModal" class="cursor-pointer p-5">
+                <img src="./assets/dot.png" class="transition hover:rotate-90 hover:scale-150">
             </div>
-        </div>
-        <div class="flex justify-between items-center shadow rounded-2xl border p-3">
-            <div class="flex justify-start items-center gap-4">
-                <img src="./assets/wallet1.png" class="border p-3 rounded-full bg-[#ddd]" alt="">
-            <div>
-                <h3 class="font-bold">Bank Deposit</h3>
-                <span class="text-sm text-[#7b7878]">Today 01:44 AM</span>
-            </div>
-            </div>
-            <div>
-                <img src="./assets/dot.png" alt="">
-            </div>
-        </div>
-        <div class="flex justify-between items-center shadow rounded-2xl border p-3">
-            <div class="flex justify-start items-center gap-4">
-                <img src="./assets/wallet1.png" class="border p-3 rounded-full bg-[#ddd]" alt="">
-            <div>
-                <h3 class="font-bold">Mobile Recharge</h3>
-                <span class="text-sm text-[#7b7878]">Today 01:44 AM</span>
-            </div>
-            </div>
-            <div>
-                <img src="./assets/dot.png" alt="">
-            </div>
-        </div>
-        <div class="flex justify-between items-center shadow rounded-2xl border p-3">
-            <div class="flex justify-start items-center gap-4">
-                <img src="./assets/wallet1.png" class="border p-3 rounded-full bg-[#ddd]" alt="">
-            <div>
-                <h3 class="font-bold">Gas Bill</h3>
-                <span class="text-sm text-[#7b7878]">Today 01:44 AM</span>
-            </div>
-            </div>
-            <div>
-                <img src="./assets/dot.png" alt="">
-            </div>
+        </div> -->
         </div>
      </section>
 
@@ -244,7 +210,7 @@
                     <label class="label">
                         <span id="selectPaySpan" class="label-text">Select To Pay</span>
                     </label>
-                    <select id="selectPayDropdown" class="select select-bordered w-full max-w-xs rounded-full" required>
+                    <select id="selectPayDropdown" class="select select-bordered w-full rounded-full" required>
                         <option disabled selected>Select your services</option>
                         <option>PalliBiddut</option>
                         <option>Carnival</option>

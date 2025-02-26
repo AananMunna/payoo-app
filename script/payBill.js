@@ -55,6 +55,8 @@ document.getElementById('payNowButton').addEventListener('click', (e)=>{
                     `
                     my_modal_1.showModal()
 
+                    transaction('Pay Bill','../assets/purse1.png')
+
                 }else{
                     document.getElementById('payPinSpan').style.color = 'red'
                     document.getElementById('payPin').style.color = 'red'

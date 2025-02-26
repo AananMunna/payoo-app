@@ -48,6 +48,8 @@ document.getElementById('transferMoneyBtn').addEventListener('click', (e)=>{
                 `
                 my_modal_1.showModal()
 
+                transaction('Transfer Money','../assets/money1.png')
+
             }else{
                 document.getElementById('transferPinSpan').style.color = 'red'
                 document.getElementById('transferPin').style.color = 'red'

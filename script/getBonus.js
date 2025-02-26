@@ -35,6 +35,8 @@ document.getElementById('getBonusBtn').addEventListener('click', (e)=>{
     document.getElementById('modal').innerHTML = `<h2 class="text-center text-lg font-bold">You have got $10 bonus SUCCESSFULLY</h2>`
     my_modal_1.showModal()
 
+    transaction('Get Bonus','../assets/bonus1.png')
+
     }else{
         document.getElementById('bonusSpan').style.color = 'red'
         document.getElementById('bonusSpan').innerText = 'Coupon code will be : payoo'
