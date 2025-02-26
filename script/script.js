@@ -9,7 +9,6 @@ document.getElementById('logInBtn').addEventListener('click', (e)=>{
 
     if(mobileNumberValue.length === 11){
         if(pinValue === 1234){
-            console.log('redirecting');
             window.location.href="./dashboard.html"
         }else{
             alert("pin dose not match")

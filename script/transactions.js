@@ -1,18 +1,17 @@
 document.getElementById('transactions').addEventListener('click', ()=>{
-    document.getElementById('addMoney').style.background = 'white'
-    document.getElementById('cashOut').style.background = 'white'
-    document.getElementById('transferMoney').style.background = 'white'
-    document.getElementById('getBonus').style.background = 'white'
-    document.getElementById('payBill').style.background = 'white'
-    document.getElementById('transactions').style.background = '#ddd'
+    bgColor('addMoney','white');
+    bgColor('cashOut','white');
+    bgColor('transferMoney','white');
+    bgColor('getBonus','white');
+    bgColor('payBill','white');
+    bgColor('transactions','#ddd');
 
-    document.getElementById('addMoneySection').style.display = 'none'
-    document.getElementById('cashOutSection').style.display = 'none'
-    document.getElementById('transferMoneySection').style.display = 'none'
-    document.getElementById('getBonusSection').style.display = 'none'
-    document.getElementById('payBillSection').style.display = 'none'
-    document.getElementById('latestPaymentSection').style.display = 'block'
-
+    toggle('addMoneySection','none');
+    toggle('cashOutSection','none');
+    toggle('transferMoneySection','none');
+    toggle('getBonusSection','none');
+    toggle('payBillSection','none');
+    toggle('latestPaymentSection','block');
 })
 
 // document.getElementById('payNowButton').addEventListener('click', (e)=>{
