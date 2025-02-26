@@ -63,7 +63,7 @@
     </div>
 
     <!-- latest payment -->
-     <section id="latestPaymentSection" class="hidden p-3 space-y-3">
+     <section id="latestPaymentSection" class=" p-3 space-y-3">
         <div class="flex justify-between items-center pt-3">
             <h2 class="text-xl font-bold">Latest Payment</h2>
             <span class="text-sm text-[#8a8787]">View All</span>
@@ -119,15 +119,15 @@
      </section>
 
      <!-- add money -->
-      <section id="addMoneySection" class="">
+      <section id="addMoneySection" class="hidden">
         <h2 class="text-xl font-bold m-5">Add Money</h2>
         <div class="card bg-base-100 shrink-0 shadow-2xl m-5">
             <form class="card-body">
                 <div class="form-control">
                     <label class="label">
-                        <span id="selectBank" class="label-text">Select A Bank</span>
+                        <span id="selectBankSpan" class="label-text">Select A Bank</span>
                     </label>
-                    <select id="bank" class="select select-bordered w-full rounded-full" required>
+                    <select id="SelectBankDropdown" class="select select-bordered w-full rounded-full" required>
                         <option disabled selected>Select bank</option>
                         <option>DBL- Dutch Bangla Bank</option>
                         <option>Sonali Bank</option>
@@ -140,7 +140,7 @@
                 </label>
                 <input id="bankAccountNumber" value="01310468353" type="number" placeholder="Enter 11 digit account number" class="input input-bordered rounded-full" required />
                 <label class="label">
-                  <span id="amount" class="label-text">Amount to Add</span>
+                  <span id="amountToAddSpan" class="label-text">Amount to Add</span>
                 </label>
                 <input id="amountToAdd" type="number" placeholder="Add amount to withdraw" class="input input-bordered rounded-full" required />
               </div>
@@ -165,19 +165,19 @@
             <form class="card-body">
               <div class="form-control">                
                 <label class="label">
-                  <span class="label-text">Agent Number</span>
+                  <span id="cashOutSpan" class="label-text">Agent Number</span>
                 </label>
-                <input id="bankAccountNumber" value="01310468353" type="number" placeholder="Enter 11 digit number" class="input input-bordered rounded-full" required />
+                <input id="cashOutAccountNumber" value="01310468353" type="number" placeholder="Enter 11 digit number" class="input input-bordered rounded-full" required />
                 <label class="label">
-                  <span class="label-text">Amount</span>
+                  <span id="cashOutAmountSpan" class="label-text">Amount</span>
                 </label>
-                <input id="amountToWithDraw" type="number" placeholder="Enter amount to withdraw" class="input input-bordered rounded-full" required />
+                <input id="cashOutAmount" type="number" placeholder="Enter amount to withdraw" class="input input-bordered rounded-full" required />
               </div>
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text">Pin Number</span>
+                  <span id="cashOutPinSpan" class="label-text">Pin Number</span>
                 </label>
-                <input id="pin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
+                <input id="cashOutPin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
                 
               </div>
               <div class="form-control mt-6">
@@ -194,19 +194,19 @@
             <form class="card-body">
               <div class="form-control">                
                 <label class="label">
-                  <span class="label-text">User Account Number</span>
+                  <span id="transferNumberSpan" class="label-text">User Account Number</span>
                 </label>
-                <input id="bankAccountNumber" value="01310468353" type="number" placeholder="Enter 11 digit number" class="input input-bordered rounded-full" required />
+                <input id="transferAccountNumber" value="01310468353" type="number" placeholder="Enter 11 digit number" class="input input-bordered rounded-full" required />
                 <label class="label">
-                  <span class="label-text">Amount</span>
+                  <span id="transferAmountSpan" class="label-text">Amount</span>
                 </label>
-                <input id="amountToTransfer" type="number" placeholder="Enter amount to transfer" class="input input-bordered rounded-full" required />
+                <input id="transferAmount" type="number" placeholder="Enter amount to transfer" class="input input-bordered rounded-full" required />
               </div>
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text">Pin Number</span>
+                  <span id="transferPinSpan" class="label-text">Pin Number</span>
                 </label>
-                <input id="pin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
+                <input id="transferPin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
                 
               </div>
               <div class="form-control mt-6">
@@ -224,7 +224,7 @@
             <form class="card-body">
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text">Enter Bonus Coupon</span>
+                  <span id="bonusSpan" class="label-text">Enter Bonus Coupon</span>
                 </label>
                 <input id="getBonusInp" value="payoo" type="text" placeholder="Enter your coupon" class="input input-bordered rounded-full" required />                
               </div>
@@ -242,10 +242,10 @@
             <form class="card-body">
                 <div class="form-control">
                     <label class="label">
-                        <span class="label-text">Select To Pay</span>
+                        <span id="selectPaySpan" class="label-text">Select To Pay</span>
                     </label>
-                    <select class="select select-bordered w-full max-w-xs rounded-full" required>
-                        <option disabled selected>Select</option>
+                    <select id="selectPayDropdown" class="select select-bordered w-full max-w-xs rounded-full" required>
+                        <option disabled selected>Select your services</option>
                         <option>PalliBiddut</option>
                         <option>Carnival</option>
                         <option>LPG Gas</option>
@@ -253,19 +253,19 @@
                 </div>
               <div class="form-control">                
                 <label class="label">
-                  <span class="label-text">Biller account Number</span>
+                  <span id="billerAccountNumberSpan" class="label-text">Biller account Number</span>
                 </label>
-                <input id="bankAccountNumber" value="01310468353" type="number" placeholder="Enter account number" class="input input-bordered rounded-full" required />
+                <input id="billerAccountNumber" value="01310468353" type="number" placeholder="Enter account number" class="input input-bordered rounded-full" required />
                 <label class="label">
-                  <span class="label-text">Amount to Pay</span>
+                  <span id="payAmountSpan" class="label-text">Amount to Pay</span>
                 </label>
-                <input id="amountToPayInput" type="number" placeholder="Add amount to Pay" class="input input-bordered rounded-full" required />
+                <input id="payAmount" type="number" placeholder="Add amount to Pay" class="input input-bordered rounded-full" required />
               </div>
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text">Pin Number</span>
+                  <span id="payPinSpan" class="label-text">Pin Number</span>
                 </label>
-                <input id="pin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
+                <input id="payPin" value="1234" type="text" placeholder="Enter 4 Digit Pin number" class="input input-bordered rounded-full" required />
                 
               </div>
               <div class="form-control mt-6">

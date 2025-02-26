@@ -20,50 +20,66 @@ document.getElementById('addMoney').addEventListener('click', ()=>{
 
 document.getElementById('addMoneyBtn').addEventListener('click', (e)=>{
     e.preventDefault();
-    // my_modal_1.showModal()
-    // document.getElementById('modal').innerHTML= `ki re`
     
+    const SelectBankDropdown = document.getElementById('SelectBankDropdown')
+    const bankAccountNumber = document.getElementById('bankAccountNumber')
+    const amountToAdd = document.getElementById('amountToAdd')
+    const pin = document.getElementById('pin')
 
-    const bank = document.getElementById('bank').value;
-    const bankAccountNumber = document.getElementById('bankAccountNumber').value;
-    const pin = document.getElementById('pin').value;
-    if(bank !== 'Select bank'){
+    if(SelectBankDropdown.value !== 'Select bank'){
+        document.getElementById('selectBankSpan').style.color = 'black'
+        document.getElementById('SelectBankDropdown').style.color = 'black'
+        document.getElementById('SelectBankDropdown').style.borderColor = '#ddd'
 
-        document.getElementById('selectBank').innerHTML= `
-        <p>You have selected ${bank}</p>`
-        document.getElementById('bank').classList.remove( `border-red-500`)
+        if(bankAccountNumber.value.length === 11){
+            document.getElementById('bankAccountNumberSpan').style.color = 'black'
+            document.getElementById('bankAccountNumber').style.color = 'black'
+            document.getElementById('bankAccountNumber').style.borderColor = '#ddd'
 
-        if(bankAccountNumber.length === 11){
+            if(amountToAdd.value !== '' && amountToAdd.value > 0){
+                document.getElementById('amountToAddSpan').style.color = 'black'
+                document.getElementById('amountToAdd').style.color = 'black'
+                document.getElementById('amountToAdd').style.borderColor = '#ddd'
+                
+                if(pin.value === '1234'){
+                    document.getElementById('pinSpan').style.color = 'black'
+                    document.getElementById('pin').style.color = 'black'
+                    document.getElementById('pin').style.borderColor = '#ddd'
 
-        document.getElementById('bankAccountNumberSpan').innerHTML= `
-        <p>Your Account number is correct</p>`
-        document.getElementById('bankAccountNumber').classList.remove( `border-red-500`)
+                    const mainBalance = document.getElementById('mainBalance').innerText;
+                    let convertedMainBalance = parseFloat(mainBalance);
+                    let sum = convertedMainBalance + parseFloat(amountToAdd.value);
+                    document.getElementById('mainBalance').innerText = sum;
 
-            if(pin === '1234'){
+                    document.getElementById('modal').innerHTML = `<h2 class="text-center text-lg font-bold">ADDED MONEY SUCCESSFULLY FROM</h2><hr/><br/>
+                    <p> <span class='font-bold'>Bank: </span> ${SelectBankDropdown.value}</p>
+                    <p><span class='font-bold'>Bank account number: </span> ${bankAccountNumber.value}</p>
+                    <p><span class='font-bold'>Amount: </span> ${amountToAdd.value}</p>
+                    <p><span class='font-bold text-green-500'>TOTAL : </span> ${convertedMainBalance} + ${amountToAdd.value} = ${sum}</p>
+                    `
+                    my_modal_1.showModal()
 
-        document.getElementById('pinSpan').innerHTML= `
-        <p>Your Pin number is correct</p>`
-        document.getElementById('pin').classList.remove( `border-red-500`)
+                }else{
+                    document.getElementById('pinSpan').style.color = 'red'
+                    document.getElementById('pin').style.color = 'red'
+                    document.getElementById('pin').style.borderColor = 'red'
+                }
 
-                operations('amountToAdd','mainBalance','+')
             }else{
-                
-        document.getElementById('pinSpan').innerHTML= `
-        <p class = 'text-red-600 scale-110'>Incorrect Pin**</p>`
-        document.getElementById('pin').classList.add( `border-red-500`)
-                
+                document.getElementById('amountToAddSpan').style.color = 'red'
+                document.getElementById('amountToAdd').style.color = 'red'
+                document.getElementById('amountToAdd').style.borderColor = 'red'
             }
         }else{
-
-        document.getElementById('bankAccountNumberSpan').innerHTML= `
-        <p class = 'text-red-600 scale-110'>Account Number Must Be 11 Digit**</p>`
-        document.getElementById('bankAccountNumber').classList.add( `border-red-500`)
-
+            document.getElementById('bankAccountNumberSpan').style.color = 'red'
+            document.getElementById('bankAccountNumber').style.color = 'red'
+            document.getElementById('bankAccountNumber').style.borderColor = 'red'
         }
-    }else{
 
-        document.getElementById('selectBank').innerHTML= `
-        <p class = 'text-red-600 scale-110'>Please Select A Bank First**</p>`
-        document.getElementById('bank').classList.add( `border-red-500`)
+    }else{
+        document.getElementById('selectBankSpan').style.color = 'red'
+        document.getElementById('SelectBankDropdown').style.color = 'red'
+        document.getElementById('SelectBankDropdown').style.borderColor = 'red'
     }
+
 })
