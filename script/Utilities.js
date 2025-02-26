@@ -39,6 +39,7 @@ const transaction = (title, img) => {
     const div = document.createElement('div');
     div.innerHTML = transactionsHtml(title, time(), img)
     transactionsList.prepend(div)
+    document.getElementById('transactionHistory').style.display='none'
 }
 
 
